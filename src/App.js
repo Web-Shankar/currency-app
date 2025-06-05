@@ -25,7 +25,7 @@ function App() {
   }
 
   return (
-    <div className="w-full p-4 md:p-10 h-screen md:h-auto bg-cover bg-center bg-no-repeat"
+    <div className="w-full p-4 md:p-10 h-screen sm:h-screen md:h-auto xl:h-screen bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${bgCoverImg})` }}> {/* ✅ Responsive padding */}
       <div className="flex flex-wrap mt-5 md:mt-0 bg-white/10 backdrop-blur-md backdrop-saturate-150 border border-white/20 rounded-xl shadow-xl">
 
@@ -53,7 +53,7 @@ function App() {
               <InputBox
                 label="From"
                 currencyOptions={options}
-                amount={amount}
+                amount={(amount > 0) ? amount : 0}
                 onCurrencyChange={(currency) => setFrom(currency)}
                 selectCurrency={from}
                 onAmountChange={(amount) => setAmount(amount)}
